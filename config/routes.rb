@@ -1,4 +1,22 @@
 Groupbuy::Application.routes.draw do
+  devise_for :admins
+
+  devise_for :users,  :controllers => { :registrations => "users/registrations" }
+
+  resources :coupons
+
+  resources :orders
+
+  resources :profiles
+
+  resources :deals
+
+  match '/deal', :to => 'public#deal'
+  match '/checkout', :to =>'public#checkout'
+  match '/past_deals', :to => 'public#past_deals'
+
+  root :to => "public#home"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

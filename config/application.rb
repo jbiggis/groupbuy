@@ -8,7 +8,17 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Groupbuy
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
+
+if Rails.env.test?
+      initializer :after => :initialize_dependency_mechanism do
+        # Work around initializer in railties/lib/rails/application/bootstrap.rb
+        ActiveSupport::Dependencies.mechanism = :load
+      end
+    end
+      
+
+
+	  # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 

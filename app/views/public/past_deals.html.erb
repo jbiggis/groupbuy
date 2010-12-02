@@ -1,0 +1,32 @@
+<h1>Listing deals</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Value</th>
+    <th>Description</th>
+    <th>Fine print</th>
+    <th>Expiration date</th>
+    <th>Start time</th>
+    <th>End time</th>
+
+  </tr>
+
+<% @deals.each do |deal| %>
+  <tr>
+    <td><%= deal.title %></td>
+    <td><%= deal.price %></td>
+    <td><%= deal.value %></td>
+    <td><%= deal.description %></td>
+    <td><%= deal.fine_print %></td>
+    <td><%= deal.expiration_date %></td>
+    <td><%= deal.start_time %></td>
+    <td><%= deal.end_time %></td>
+
+  </tr>
+<% end %>
+</table>
+
+
+
