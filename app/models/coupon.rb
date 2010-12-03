@@ -16,8 +16,8 @@
 
 class Coupon < ActiveRecord::Base
 
-	belongs_to :users
-	belongs_to :deals
+	belongs_to :user
+	belongs_to :deal
 	has_one :order
 
 end

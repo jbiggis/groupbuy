@@ -1,5 +1,6 @@
 Groupbuy::Application.routes.draw do
-  devise_for :admins
+
+  devise_for :admins,  :controllers => { :registrations => "admins/registrations" }
 
   devise_for :users,  :controllers => { :registrations => "users/registrations" }
 
@@ -11,9 +12,25 @@ Groupbuy::Application.routes.draw do
 
   resources :deals
 
+  match '/admin/home', :to => 'admin#home'
+ 
+  devise_for :admins do
+    get "admin/admins", :to => "admins/registrations#index"
+  end
+
+
   match '/deal', :to => 'public#deal'
   match '/checkout', :to =>'public#checkout'
+  post 'public/create'
+  
   match '/past_deals', :to => 'public#past_deals'
+
+  match '/member/my_coupons', :to => 'member#my_coupons'
+  match '/member/my_profile', :to => 'member#my_profile'
+
+  match '/about', :to => 'pages#about'
+  match '/contact', :to => 'pages#contact'
+  match '/how-it-works', :to => 'pages#how_it_works'
 
   root :to => "public#home"
 

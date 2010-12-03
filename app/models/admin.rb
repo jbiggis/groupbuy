@@ -26,5 +26,5 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :trackable, :lockable, :timeoutable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation
 end

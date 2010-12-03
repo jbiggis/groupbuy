@@ -1,5 +1,7 @@
 class DealsController < ApplicationController
 
+ before_filter :authenticate_admin!	
+	
   def index
    	
 	 @title = "All Deals"
@@ -67,4 +69,6 @@ class DealsController < ApplicationController
       redirect_to(deals_url)
 
   end
+
+
 end

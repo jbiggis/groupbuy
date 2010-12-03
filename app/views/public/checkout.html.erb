@@ -1,0 +1,172 @@
+<h1><%=title%></h1>
+
+<%form_for :order, @order, :url => { :action => "create" }  do |f|%>
+
+
+	<div id="error_explanation">
+
+		<% if @order.errors.any? %>
+
+			<h2> <%= pluralize(@order.errors.count, 'error') %> 
+				prohibited this deal from being purchased: </h2>
+
+			<ul>
+				
+				<% @order.errors.full_messages.each do |msg| %>
+
+					<li> <%= msg %> </li>
+
+				<% end %>
+
+			</ul>
+
+		<% end %>
+
+	</div>
+
+
+	<br/>
+
+
+	<%= f.hidden_field :deal_id, :value => @deal.id %>
+
+
+	<table>
+	
+	<tr>
+		<th>Description</th>
+		<th>Price</th>
+		<th>Quantity</th>
+
+	</tr>
+
+	<tr>
+		
+		<td><%= h(@deal.title) %></td>
+		<td><%= h(@deal.price) %></td>
+		<td><%=f.text_field :quantity %></td>
+
+	</tr>
+
+
+	<tr>
+		
+		<td>Total Price: </td>
+	
+	</tr>
+	
+	</table>
+
+	<br />
+
+
+
+
+	<% if !anybody_signed_in? %>
+
+		<h2>Create an Account</h2>
+
+		<%= fields_for(@user) do |fo| %>
+
+			<div class="field">
+		
+				<%= fo.label :name %> <br/>
+				<%= fo.text_field :name %>
+		
+			</div>	
+	
+			<div class="field">
+		
+				<%= fo.label :email %> <br/>
+				<%= fo.text_field :email %>
+		
+			</div>
+
+			<div class="field">
+	
+				<%= fo.label :password %> <br/>
+				<%= fo.text_field :password %>
+			
+			</div>
+
+			<div class="field">
+				
+				<%= fo.label :password_confirmation %> <br/>
+				<%= fo.text_field :password_confirmation %>
+			
+			</div>
+
+		<% end %>
+	
+	<% end %>
+
+
+	<h2>Billing Information</h2>
+
+
+
+	<div class="field">
+	
+		<%= f.label :cardholder_name %><br/>
+		<%= f.text_field :cardholder_name %>
+
+	</div>
+
+	<div class="field">
+		
+		<%= f.label :card_number %><br/>
+		<%= f.text_field :card_number %>
+
+	</div>
+
+	<div class="field">
+	
+		<%= f.label :security_code %><br/>
+		<%= f.text_field :security_code %>
+
+	</div>
+
+	<div class="field">
+		
+		<%= f.label :expiry_date %><br/>
+		<%= f.text_field :expiry_date %>
+
+	</div>
+
+	<div class="field">
+		
+		<%= f.label :billing_address %><br/>
+		<%= f.text_field :billing_address %>
+
+	</div>
+
+	<div class="field">
+		
+		<%= f.label :city %><br/>
+		<%= f.text_field :city %>
+
+	</div>
+
+	<div class="field">
+	
+		<%= f.label :province %><br/>
+		<%= f.text_field :province %>
+
+	</div>
+	
+	<div class="field">
+	
+		<%= f.label :postal_code %><br/>
+		<%= f.text_field :postal_code %>
+
+	</div>
+
+	<div class="action">
+
+		<%= f.submit "Purchase deal"%>
+
+	</div>
+
+<% end %>
+
+

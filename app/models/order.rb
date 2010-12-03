@@ -18,4 +18,11 @@ belongs_to :user
 belongs_to :deal
 belongs_to :coupon
 
+attr_accessor :cardholder_name, :card_number, :security_code, :expiry_date, :billing_address, :city, :province, :postal_code, :quantity
+
+attr_accessible  :cardholder_name, :card_number, :security_code, :expiry_date, :billing_address, :city, :province, :postal_code, :quantity
+
+
+
+
 end

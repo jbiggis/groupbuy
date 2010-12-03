@@ -31,7 +31,7 @@ has_many :coupons
 
 
 def self.find_active
-	find(:first, :conditions => ["end_time > ?", Time.now])
+	find(:first, :conditions => ["start_time < ? AND end_time > ?", Time.now, Time.now])
 end
 
 end

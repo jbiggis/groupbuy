@@ -9,12 +9,18 @@
 
   <%= render 'shared/navigation' %>
 
-
+  <%= render 'shared/menu' %>
 
 </head>
 <body>
 
+	        <% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
+  
 <%= yield %>
+
+<%= render 'shared/footer' %>
 
 </body>
 </html>

@@ -9,6 +9,7 @@
   <%= @deal.description %>
 </p>
 
+<%= link_to "Buy", {:controller => 'public', :action => 'checkout', :id => @deal.id} %>
 
 <p>
   <b>Price:</b>
@@ -75,7 +76,6 @@
 
 
 
-<%= link_to "Purchase this deal","#" %>
 
 
 
