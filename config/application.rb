@@ -9,6 +9,8 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 module Groupbuy
   class Application < Rails::Application
 
+Paperclip::Railtie.insert      
+
 if Rails.env.test?
       initializer :after => :initialize_dependency_mechanism do
         # Work around initializer in railties/lib/rails/application/bootstrap.rb

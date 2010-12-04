@@ -29,6 +29,8 @@ class Deal < ActiveRecord::Base
 has_many :orders
 has_many :coupons
 
+has_attached_file :image, :url => "/assets/deals/:id/:style/:basename.:extension",
+	:path => ":rails_root/public/assets/deals/:id/:style/:basename.:extension"
 
 def self.find_active
 	find(:first, :conditions => ["start_time < ? AND end_time > ?", Time.now, Time.now])

@@ -17,6 +17,7 @@
 
 <% @deals.each do |deal| %>
   <tr>
+    <td><%= image_tag deal.image.url, :size => '90x90' %></td>		
     <td><%= deal.title %></td>
     <td><%= deal.price %></td>
     <td><%= deal.value %></td>

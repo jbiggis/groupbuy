@@ -9,6 +9,7 @@ namespace :db do
 	make_users
 	make_deals
 	make_orders
+	make_emails
 
 
  end
@@ -60,10 +61,11 @@ Deal.create!(:title => "The Juicy Burger Deal",
 		:company_address => "#{n+1} st.",
 		:company_website => "www.awesome.com",
 		:company_phone => "60320328",
-	       :image_file_name => "#{n+1}.jpg",
+	       :image_file_name => "1.jpg",
        		:image_content_type => "image/jpeg",
  		:image_file_size => 52198,
-		:image_updated_at => 12/12/2010)		
+		:image_updated_at => 12/12/2010, 
+	    	:showoff => true)		
 end
 
 		
@@ -88,6 +90,14 @@ def make_orders
 
 		end
 	end
+
+end
+
+def make_emails
+
+	Email.create!(:email => 'jscchiu@gmail.com')
+	Email.create!(:email => 'jonathan.chiu@live.ca')
+	Email.create!(:email => 'research@savouries.ca')
 
 end
 

@@ -11,6 +11,9 @@ Groupbuy::Application.routes.draw do
   resources :profiles
 
   resources :deals
+  
+  resources :emails, :only => [:create]
+ 
 
   match '/admin/home', :to => 'admin#home'
  
