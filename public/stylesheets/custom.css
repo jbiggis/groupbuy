@@ -1,3 +1,80 @@
+/* general */
+
+header {
+
+height:150px;
+
+}
+
+
+#email-signup {
+
+height:60px;
+width:920px;
+margin: 0 auto;
+padding-top:20px;
+text-align:center;
+
+}
+
+#email-signup .email-input{
+
+width: 400px;
+
+}
+
+#email-signup .subscribe {
+
+}
+
+
+nav {
+
+height:60px;
+width:920px;
+margin: 0 auto;
+
+}
+
+#user-nav {
+
+float:right;
+
+
+}
+
+#container {
+
+width:960px;
+margin: 0 auto;
+
+}
+
+#content-left {
+width:220px;
+float:left;
+}
+
+#content-left #menu ul {
+margin:0;
+padding:0;
+list-style:none;
+}
+
+
+#content-right {
+width:700px;
+float:right;
+}
+
+footer {
+
+clear:both;
+width:920px;
+margin:0 auto;
+
+}
+
 .deal-info {
 width:400px;
 float:left;

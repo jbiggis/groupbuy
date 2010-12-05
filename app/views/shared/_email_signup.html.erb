@@ -2,17 +2,20 @@
 
 <%= form_for :email, @email, :url => {:controller => "/emails", :action => "create" } do |f| %>
 
-	<div class = "field">
-		<%= f.label :email %><br/>
-		<%= f.text_field :email %>
+	<span class = "field">
+		
+	Enter your email to get your daily deal for Hong Kong: 
 
-	</div>
+		<%= f.text_field :email, :class => "email-input" %>
 
-	<div class = "action">
+
+	</span>
+
+	<span class = "action subscribe">
 
 
 		<%=f.submit "Subscribe" %>
 
-	</div>
+	</span>
 <% end %>
  

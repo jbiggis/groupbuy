@@ -7,21 +7,53 @@
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 
-  <%= render 'shared/navigation' %>
-
-  <%= render 'shared/menu' %>
 
 </head>
 <body>
-	<%= render 'shared/email_signup' %>
 
-	        <% flash.each do |key, value| %>
-          <div class="flash <%= key %>"><%= value %></div>
-        <% end %>
+  <header>
+  	
+  <div id = "email-signup" >
+	 
+  <%= render 'shared/email_signup' %>
+
+  </div>
+
+  <nav>
+
+  <%= render 'shared/navigation' %>
+
+  </nav>
+
+  </header>
+
+
+  <div id = "container" >
+
+
+
+  <% flash.each do |key, value| %>
+
+	  <div class="flash <%= key %>"><%= value %></div>
+
+  <% end %>
   
-<%= yield %>
+  <div id = "content-left" >
+      
+	<%= render 'shared/menu' %>
 
-<%= render 'shared/footer' %>
+  </div>
+
+  <div id = "content-right">  
+	  
+	  <%= yield %>
+  
+  </div>
+
+  
+  <%= render 'shared/footer' %>
+
+  </div>
 
 </body>
 </html>
