@@ -16,7 +16,7 @@
 
   <div id='header'>
   	
-  <div id = "email-signup" >
+  <div id = "email-signup" class ="bottom-round" >
 	 
   <%= render 'shared/email_signup' %>
 
@@ -39,21 +39,24 @@
 	  <div class="flash <%= key %>"><%= value %></div>
 
   <% end %>
-  
-  <div id = "content-left" >
+
+  <div id="content">
+  <div id = "content-left" class="round" >
       
 	<%= render 'shared/menu' %>
  </div>
 
-  <div id = "content-right">  
+  <div id = "content-right" class="round">  
 
 
 
 	  <%= yield %>
   
   </div>
+</div>
 
-  
+<div class="divider"></div>
+
   <%= render 'shared/footer' %>
 
   </div>

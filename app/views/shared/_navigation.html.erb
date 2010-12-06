@@ -1,18 +1,18 @@
-<div id="user-nav">  
+<div id="user-nav" class="round">  
 	<% if admin_signed_in? %>
-	Hi <%= current_admin.name %>!
-	<%= link_to "Admin panel", "/admin/home" %>
-       	<%= link_to "Sign out", destroy_admin_session_path %>	
+	<span class="greeting">Hi <%= current_admin.name %>! </span> 
+	<%= link_to "Admin panel", "/admin/home", :class => "nav-link" %>
+       	<%= link_to "Sign out", destroy_admin_session_path, :class => "nav-link" %>	
 
 	
       <% elsif user_signed_in? %>  
-        Hi <%= current_user.name %>!  
-      	<%= link_to "My stuff", "/member/my_coupons" %>	
-	<%= link_to "Sign out", destroy_user_session_path %>
+	 <span class="greeting">Hi <%= current_user.name %>! </span>
+      	<%= link_to "My stuff", "/member/my_coupons", :class => "nav-link" %>	
+	<%= link_to "Sign out", destroy_user_session_path, :class => "nav-link" %>
 
       <% else %>  
-        <%= link_to "Sign up", new_user_registration_path %> or  
-        <%= link_to "Sign in", new_user_session_path %>  
+        <%= link_to "Sign up", new_user_registration_path, :class => "nav-link" %> or  
+        <%= link_to "Sign in", new_user_session_path, :class => "nav-link" %>  
 	  
 
 	<% end %>

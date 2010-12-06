@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<div id="deal-top">
+
 <div id="deal-image">
 
 	<%= image_tag @deal.image.url, :size => '450x350' %>
@@ -8,65 +10,68 @@
 
 <div id = "deal-details">
 
-<p>
+<div id="deal-title">
   <%= @deal.title %>
-</p>
+</div>
 
-<p>
+<div id="deal-description">
   <%= @deal.description %>
-</p>
+</div>
 
+<div id="deal-price">
+	<span id="hkd">HK$</span>
+	<span id="deal-price-number">
+		<%= (@deal.price).to_i %>
+	</span>
+</div>
+
+<div id ="buy-button">
 <%= link_to "buy now!", {:controller => 'public', :action => 'checkout', :id => @deal.id}, :class => 'button rounded' %>
+</div>
 
-<p>
-  HK<%= number_to_currency(@deal.price) %>
-</p>
 
-<p>
-  <b>Value:</b>
-  HK<%= number_to_currency(@deal.value) %>
-</p>
+<div id="deal-value-info">
 
-<p>
-<b>Discount:</b>
-<%= (((@deal.value - @deal.price)/@deal.value)*100).to_i %>%
-</p>
+<div id="deal-value" class="round">
 
-<b>You save:</b>
-HK<%= number_to_currency(@deal.value - @deal.price) %>
-</p>
+	HK$<%=(@deal.price).to_i %>
+	  <div class="deal-value-label">Value</div>
+</div>
+
+<div id="deal-discount" class="round">
+
+	<%= (((@deal.value - @deal.price)/@deal.value)*100).to_i %>%
+	  <div class="deal-value-label">Discount</div>
+</div>
+
+<div id="deal-savings"  class="round">
+
+	HK$<%= (@deal.value - @deal.price).to_i %>
+	  <div class="deal-value-label">Savings</div>
+</div>
+
+</div>
+
+</div>
 </div>
 
 <div id="deal-timer">
   <%= render 'shared/jquery_timer' %>
 </div>
 
-<div id="deal-fine-print">
-	<p>       
-	<b>Fine print:</b>
-  <%= @deal.fine_print %>
-  </p>
-  <p>
-  <b>Expiration date:</b>
-  <%= @deal.expiration_date.strftime("%B %d, %Y") %>
-
-</p>
-</div>
-
 
 <div id = "deal-summary">
-<p>
-  <b>Summary:</b>
+
   <%= @deal.summary %>
-  </p>
-  </div>
+
+ </div>
 
 
 
 
 
   <div id="deal-company-info">
-<b>Company Information:</b>
+	  <div id="deal-company-info-label">Company Information</div>
 <p>
 <%= @deal.company_name %>
 </p>
@@ -85,6 +90,18 @@ HK<%= number_to_currency(@deal.value - @deal.price) %>
 
 </div>
 
+
+<div id="deal-fine-print">
+	    
+<div id="deal-fine-print-label">The Fine Print</div>
+<%= @deal.fine_print %><br/>
+  
+  
+  <b>Expiration date:</b>
+  <%= @deal.expiration_date.strftime("%B %d, %Y") %>
+
+
+</div>
 
 
 

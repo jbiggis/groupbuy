@@ -14,11 +14,11 @@
 
 .dash .digit {
 	font-size: 55pt;
-	font-weight: bold;
+
 	float: left;
 	width: 55px;
 	text-align: center;
-	font-family: Times;
+	font-family: helvetica;
 	color: #555;
 	position: relative;
 }
@@ -32,6 +32,15 @@
 	color: #555;
 	text-transform: uppercase;
 	letter-spacing: 2px;
+}
+
+.dash-left-to-buy {
+
+float:left;
+margin-left:30px;
+font-size:24px;
+margin-top:30px;
+font-family: rockwell;
 }
 
 #year, #month, #day, #hour {
