@@ -25,7 +25,7 @@ class PublicController < ApplicationController
 
 	def past_deals
 
-		@deals = Deal.where("showoff = ?", true).all
+		@deals = Deal.where("showoff = ? AND end_time < ?", true, Time.now.in_time_zone).all
 
 	end
 

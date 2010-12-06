@@ -8,6 +8,19 @@ def my_coupons
 
 end
 
+def show
+
+	@coupon = Coupon.find(params[:id])
+respond_to do |format|
+
+format.pdf { render :layout => false}
+
+end
+
+end
+
+
+
 def my_account
 
 end

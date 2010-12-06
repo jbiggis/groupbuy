@@ -1,5 +1,10 @@
 <h1>Listing coupons</h1>
 
+
+<%= link_to 'My Coupons', 'my_coupons' %>
+<%= link_to 'My Profile', 'my_profile' %>
+
+
 <table>
       
   <tr>
@@ -24,7 +29,7 @@
     <td><%= coupon.coupon_code %></td>
     <td><%= coupon.purchased_date.strftime("%B %d, %Y") %></td>
     <td><%= coupon.expiration_date.strftime("%B %d, %Y") %></td>
-
+    <td><%= link_to "Print", {:controller => "member", :action => "show", :id => coupon.id, :format => 'pdf'}%></td
   </tr>
 
 <% end %>
@@ -32,8 +37,5 @@
 </table>
 
 <br />
-
-<%= link_to 'My Coupons', 'my_coupons' %>
-<%= link_to 'My Profile', 'my_profile' %>
 
 
