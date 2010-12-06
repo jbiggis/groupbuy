@@ -2,28 +2,26 @@
 
 <table>
   <tr>
-    <th>Title</th>
+
+    <th>Date</th>
+    <th></th>
+    <th>Deal</th>   
     <th>Price</th>
     <th>Value</th>
-    <th>Description</th>
-    <th>Fine print</th>
-    <th>Expiration date</th>
-    <th>Start time</th>
-    <th>End time</th>
+    <th>Savings</th>
 
   </tr>
 
 
 <% @deals.each do |deal| %>
   <tr>
-    <td><%= deal.title %></td>
+	 
+    <td><%= deal.start_time.strftime("%B %d, %Y") %></td>	 
+    <td><%= image_tag deal.image.url, :size => '120x120' %></td>      
+    <td><%= link_to deal.title, {:action => 'deal', :id => deal.id} %><br/><%=deal.description %></td>
     <td><%= deal.price %></td>
     <td><%= deal.value %></td>
-    <td><%= deal.description %></td>
-    <td><%= deal.fine_print %></td>
-    <td><%= deal.expiration_date %></td>
-    <td><%= deal.start_time %></td>
-    <td><%= deal.end_time %></td>
+    <td><%= (1 - (deal.value/deal.price))*100 %> %</td>
 
   </tr>
 <% end %>

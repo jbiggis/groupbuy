@@ -1,65 +1,71 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @deal.image.url %>
+<div id="deal-image">
+
+	<%= image_tag @deal.image.url, :size => '450x350' %>
+
+</div>
+
+<div id = "deal-details">
 
 <p>
-  <b>Title:</b>
   <%= @deal.title %>
 </p>
 
 <p>
-  <b>Description:</b>
   <%= @deal.description %>
 </p>
 
-<%= link_to "Buy", {:controller => 'public', :action => 'checkout', :id => @deal.id} %>
+<%= link_to "buy now!", {:controller => 'public', :action => 'checkout', :id => @deal.id}, :class => 'button rounded' %>
 
 <p>
-  <b>Price:</b>
-  <%= @deal.price %>
+  HK<%= number_to_currency(@deal.price) %>
 </p>
 
 <p>
   <b>Value:</b>
-  <%= @deal.value %>
-</p>
-
-
-
-<p>
-  <b>Start time:</b>
-  <%= @deal.start_time.strftime("%B %d, %Y") %>
+  HK<%= number_to_currency(@deal.value) %>
 </p>
 
 <p>
-  <b>End time:</b>
-  <%= @deal.end_time.strftime("%B %d, %Y") %>
+<b>Discount:</b>
+<%= (((@deal.value - @deal.price)/@deal.value)*100).to_i %>%
 </p>
 
-<p>
-  <b>Fine print:</b>
+<b>You save:</b>
+HK<%= number_to_currency(@deal.value - @deal.price) %>
+</p>
+</div>
+
+<div id="deal-timer">
+  <%= render 'shared/jquery_timer' %>
+</div>
+
+<div id="deal-fine-print">
+	<p>       
+	<b>Fine print:</b>
   <%= @deal.fine_print %>
-</p>
-
-<p>
+  </p>
+  <p>
   <b>Expiration date:</b>
   <%= @deal.expiration_date.strftime("%B %d, %Y") %>
 
 </p>
+</div>
 
+
+<div id = "deal-summary">
 <p>
   <b>Summary:</b>
   <%= @deal.summary %>
-</p>
+  </p>
+  </div>
 
 
 
 
 
-
-<p>
-
-
+  <div id="deal-company-info">
 <b>Company Information:</b>
 <p>
 <%= @deal.company_name %>
@@ -77,7 +83,7 @@
   <%= @deal.company_phone %>
 </p>
 
-
+</div>
 
 
 

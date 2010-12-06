@@ -1,7 +1,8 @@
 <h1>Listing coupons</h1>
 
 <table>
-	<tr>
+      
+  <tr>
 	
     <th>Deal</th>
     <th></th>
@@ -15,20 +16,23 @@
   </tr>
 
 <% @coupons.each do |coupon| %>
-	<tr>
 
-	<td><%= link_to coupon.deal.title, :controller => 'public', :action => 'deal', :id => coupon.deal.id %></td>
+  <tr>
+    <td><%= image_tag coupon.deal.image.url, :size => '90x90' %></td>
+    <td><%= link_to coupon.deal.title, :controller => 'public', 
+		:action => 'deal', :id => coupon.deal.id %></td>
     <td><%= coupon.coupon_code %></td>
-    <td><%= coupon.purchased_date %></td>
-    <td><%= coupon.expiration_date %></td>
-
-
+    <td><%= coupon.purchased_date.strftime("%B %d, %Y") %></td>
+    <td><%= coupon.expiration_date.strftime("%B %d, %Y") %></td>
 
   </tr>
+
 <% end %>
+
 </table>
 
 <br />
+
 <%= link_to 'My Coupons', 'my_coupons' %>
 <%= link_to 'My Profile', 'my_profile' %>
 

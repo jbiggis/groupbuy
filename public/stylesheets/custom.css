@@ -1,6 +1,11 @@
 /* general */
+body {
+background:#cff;
+padding:0;
+margin:0;
+}
 
-header {
+#header {
 
 height:150px;
 
@@ -8,7 +13,7 @@ height:150px;
 
 
 #email-signup {
-
+background:#fff;
 height:60px;
 width:920px;
 margin: 0 auto;
@@ -28,15 +33,16 @@ width: 400px;
 }
 
 
-nav {
+#nav {
 
 height:60px;
 width:920px;
 margin: 0 auto;
-
+background:#fff;
 }
 
 #user-nav {
+
 
 float:right;
 
@@ -53,21 +59,24 @@ margin: 0 auto;
 #content-left {
 width:220px;
 float:left;
+background:#fff;
 }
 
 #content-left #menu ul {
 margin:0;
 padding:0;
 list-style:none;
+
 }
 
 
 #content-right {
 width:700px;
 float:right;
+background:#fff;
 }
 
-footer {
+#footer {
 
 clear:both;
 width:920px;
@@ -75,15 +84,76 @@ margin:0 auto;
 
 }
 
+
+/* deal page */
+
 .deal-info {
 width:400px;
 float:left;
 margin:20px;
 }
 
-.company-info {
+#deal-image {
 
+float:left;
+width:500px;
+height:400px;
+}
+
+#deal-details {
+width:200px;
+float:right;
+
+}
+
+.button.rounded {
+
+color:white;
+text-decoration:none;
+font-size:26px;
+font-family:rockwell;
+
+}
+
+a.button.rounded {
+width:200px;
+height:30px;
+
+background: -webkit-gradient(linear, 0% 100%, 0% 0%, from(#318BC6), color-stop(0.47, #1F7AB5), color-stop(0.5, #2181C0), to(#72B7DF));
+border-bottom-left-radius: 2em 2em;
+border-bottom-right-radius: 2em 2em;
+border-top-left-radius: 2em 2em;
+border-top-right-radius: 2em 2em;
+-moz-border-radius: 2em;
+background:#1D81C1;
+padding: 10px 0;
+padding-left:40px;
+padding-right:40px;
+margin:2px;
+}
+
+#deal-timer {
+float:left;
+}
+
+#deal-fine-print {
+
+float:left;
+clear:both;
+}
+
+#deal-summary {
+float:left;
+clear:both;
+}
+
+#deal-company-info {
 width:400px;
 float: left;
-margin:20px;
+clear:both;
 }
+
+
+
+
+

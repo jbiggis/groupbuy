@@ -8,11 +8,12 @@ class PublicController < ApplicationController
 	#@deal = Deal.where("start_time < ? AND end_time > ?", Time.now, Time.now).first
 	@deal = Deal.find_active
 
-	#@yo = Time.now
-	#@poo = DateTime.now
-	#@hey = @deal.start_time
-	#@boo = @deal.end_time
+	@end_year =  @deal.end_time.utc.strftime("%Y").to_i
+	@end_month =  @deal.end_time.utc.strftime("%m").to_i
+	@end_day =  @deal.end_time.utc.strftime("%e").to_i
+	@end_hour =  @deal.end_time.utc.strftime("%H").to_i
 
+	
 	end
 
 
