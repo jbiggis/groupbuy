@@ -1,6 +1,8 @@
+<h1><%=t :my_profile%></h1>
 
-<%= link_to 'My Coupons', 'my_coupons' %>
-<%= link_to 'My Profile', 'my_profile' %>
+
+<%= link_to t(:my_coupons), 'my_coupons' %>
+<%= link_to t(:my_profile), 'my_profile' %>
 
 
 <%= form_for(@profile) do |f| %>

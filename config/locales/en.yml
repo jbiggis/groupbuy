@@ -30,7 +30,7 @@ en:
   seconds: seconds
   time_left: Left To Buy
  
-  date: Date
+  deal_date: Date
   deal: Deal
   price: Price
   value: Value
@@ -59,3 +59,35 @@ en:
   province: Province
   postal_code: Postal Code
   purchase: Purchase Deal
+
+  my_coupons: My Coupons
+  my_profile: My Profile
+
+  coupon: Coupon
+  coupon_code: Coupon Code 
+  purchase_date: Purchase Date
+  expiry_date: Expiry Date
+
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
+    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    order:
+      - :year
+      - :month
+      - :day
+
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    am: "am"
+    pm: "pm"

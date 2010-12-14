@@ -17,12 +17,20 @@
 	<%= f.file_field :image %>
 
   <div class="field">
+
+
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+      <% Deal.available_translatable_columns_of(:title).each do |attribute| %> 
+	  <%= f.text_field attribute %> 
+ 
+  <% end %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
+      <% Deal.available_translatable_columns_of(:description).each do |attribute| %> 
+	  <%= f.text_field attribute %> 
+ 
+  <% end %>
   </div>
   <div class="field">
     <%= f.label :price %><br />
@@ -34,11 +42,17 @@
   </div>
   <div class="field">
     <%= f.label :summary %><br />
-    <%= f.text_area :summary %>
+      <% Deal.available_translatable_columns_of(:summary).each do |attribute| %> 
+	  <%= f.text_field attribute %> 
+ 
+  <% end %>
   </div>
   <div class="field">
-    <%= f.label :fine_print %><br />
-    <%= f.text_field :fine_print %>
+	    <%= f.label :fine_print %><br /> 
+      <% Deal.available_translatable_columns_of(:fine_print).each do |attribute| %> 
+	  <%= f.text_field attribute %> 
+ 
+  <% end %>
   </div>
   <div class="field">
     <%= f.label :expiration_date %><br />
@@ -65,11 +79,17 @@
 	  
   <div class="field">
     <%= f.label :company_name %><br />
-    <%= f.text_field :company_name %>
+      <% Deal.available_translatable_columns_of(:company_name).each do |attribute| %> 
+	  <%= f.text_field attribute %> 
+ 
+  <% end %>
   </div>
   <div class="field">
     <%= f.label :company_address %><br />
-    <%= f.text_area :company_address %>
+      <% Deal.available_translatable_columns_of(:company_address).each do |attribute| %> 
+	  <%= f.text_field attribute %> 
+ 
+  <% end %>
   </div>
     <div class="field">
     <%= f.label :company_website %><br />

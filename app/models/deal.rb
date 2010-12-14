@@ -26,6 +26,8 @@
 
 class Deal < ActiveRecord::Base
 
+	 translatable_columns :title, :description, :fine_print, :summary, :company_name, :company_address 
+
 has_many :orders
 has_many :coupons
 

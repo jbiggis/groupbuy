@@ -1,19 +1,19 @@
-<h1>Listing coupons</h1>
+<h1><%=t :my_coupons%></h1>
 
 
-<%= link_to 'My Coupons', 'my_coupons' %>
-<%= link_to 'My Profile', 'my_profile' %>
+<%= link_to t(:my_coupons), 'my_coupons' %>
+<%= link_to t(:my_profile), 'my_profile' %>
 
 
 <table>
       
   <tr>
 	
-    <th>Deal</th>
+	  <th><%=t :coupon%></th>
     <th></th>
-    <th>Coupon number</th>
-    <th>Purchase date</th>
-    <th>Expiration date</th>
+    <th><%=t :coupon_code%></th>
+    <th><%=t :purchase_date%></th>
+    <th><%=t :expiry_date%></th>
 
     <th></th>
     <th></th>
