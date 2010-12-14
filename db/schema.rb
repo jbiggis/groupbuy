@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101203141315) do
+ActiveRecord::Schema.define(:version => 20101213180226) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                             :default => "",   :null => false
@@ -33,6 +33,14 @@ ActiveRecord::Schema.define(:version => 20101203141315) do
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["unlock_token"], :name => "index_admins_on_unlock_token", :unique => true
 
+  create_table "authentications", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "coupons", :force => true do |t|
     t.string   "coupon_code"
     t.integer  "user_id"
@@ -49,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20101203141315) do
     t.decimal  "price"
     t.decimal  "value"
     t.string   "description"
-    t.string   "fine_print"
+    t.text     "fine_print",         :limit => 255
     t.datetime "expiration_date"
     t.datetime "start_time"
     t.datetime "end_time"
@@ -63,8 +71,8 @@ ActiveRecord::Schema.define(:version => 20101203141315) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "summary"
-    t.boolean  "showoff",            :default => false
+    t.text     "summary",            :limit => 255
+    t.boolean  "showoff",                           :default => false
   end
 
   create_table "emails", :force => true do |t|

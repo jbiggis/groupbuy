@@ -16,6 +16,10 @@ def title
 
 end
 
+
+
+
+
 def email
 
 	@email = Email.new

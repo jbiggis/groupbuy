@@ -1,5 +1,6 @@
 Groupbuy::Application.routes.draw do
 
+
   devise_for :admins,  :controllers => { :registrations => "admins/registrations" }
 
   devise_for :users,  :controllers => { :registrations => "users/registrations" }
@@ -11,9 +12,13 @@ Groupbuy::Application.routes.draw do
   resources :profiles
 
   resources :deals
-  
+
   resources :emails, :only => [:create]
  
+  resources :authentications
+
+  match '/auth/:provider/callback' => 'authentications#create'
+
 
   match '/admin/home', :to => 'admin#home'
  
@@ -95,4 +100,6 @@ Groupbuy::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
 
    match ':controller(/:action(/:id(.:format)))'
+
+
 end

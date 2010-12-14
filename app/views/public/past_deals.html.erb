@@ -1,14 +1,15 @@
-<h1>Past Deals</h1>
+<h1><%= t :recent_deals%></h1>
 
 <table>
   <tr>
 
-    <th>Date</th>
+	  <th><%=t :date%></th>
     <th></th>
-    <th>Deal</th>   
-    <th>Price</th>
-    <th>Value</th>
-    <th>Savings</th>
+    <th><%=t :deal %></th>   
+    <th><%=t :price %></th>
+    <th><%=t :value %></th>
+    <th><%=t :discount %></th>
+    <th><%=t :savings%></th>
 
   </tr>
 
@@ -21,7 +22,8 @@
     <td><%= link_to deal.title, {:action => 'deal', :id => deal.id} %><br/><%=deal.description %></td>
     <td><%= deal.price %></td>
     <td><%= deal.value %></td>
-    <td><%= (1 - (deal.value/deal.price))*100 %> %</td>
+    <td><%= (1 - (deal.price/deal.value))*100 %> %</td>
+    <td><%= deal.value - deal.price%></td>
 
   </tr>
 <% end %>

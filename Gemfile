@@ -10,6 +10,8 @@ gem 'paperclip'
 
 gem 'prawn'
 
+gem 'omniauth'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

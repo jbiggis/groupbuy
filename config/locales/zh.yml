@@ -1,0 +1,30 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+
+# config/locales/choda.yml
+zh:
+  greeting: 你好
+  email_sign_up: 電郵是知道今日熱 Buy 的最好方法 
+  order_user: UUSSAARRR Choada
+  title: OlalallalaS
+  description: 產品資料
+  fine_print: 細則
+  company_information: 地址及地圖
+  language: 中文
+  featured_deal: 今日優惠
+  recent_deals: 最近優惠
+  how_it_works: 如何運作
+  signin: 登入
+  my_account: 我的帳戶
+  signup: 登記
+  signout: 登出
+  about: 關於我們
+  contact: 聯絡我們
+ 
+  date: 日期  
+  deal: 優惠
+  price: 優惠價
+  value: 原價
+  discount: 折扣  
+  savings: 節省	

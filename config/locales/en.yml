@@ -1,5 +1,28 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
+
 en:
-  hello: "Hello world"
+  greeting: Hi
+  email_sign_up: Enter your email to get your daily deal for Hong Kong
+  title: Harro
+  order_user: User!!!
+  description: Description
+  fine_print: Fine Print
+  company_information: Company Information
+  language: English
+  featured_deal: Featured Deal
+  recent_deals: Recent Deals
+  how_it_works: How It Works
+  signin:  Sign In
+  my_account: My Account
+  signup: Sign Up
+  signout: Sign Out
+  about: About
+  contact: Contact
+  date: Date
+  deal: Deal
+  price: Price
+  value: Value
+  discount: Discount
+  savings: Savings
