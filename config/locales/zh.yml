@@ -22,9 +22,39 @@ zh:
   about: 關於我們
   contact: 聯絡我們
  
+  buy: 立即購買
+  savings_home: 慳了
+
+  days: 日
+  hours: 小時
+  minutes: 分鐘
+  seconds: 秒鐘
+  time_left: 剩余時間  
+ 
   date: 日期  
   deal: 優惠
   price: 優惠價
   value: 原價
   discount: 折扣  
   savings: 節省	
+  
+  checkout: 你的購買清單
+  quantity: 數量 
+  total: 總數
+
+  already_have_account: 已設立帳戶？
+  you_can_use: 您可以用
+  or: 又或者您的 Dealamama 帳戶來　
+  create_account: 沒有帳戶嗎？請先在此登記　
+  name: 名字
+  email: 電郵地址
+  password: 密碼
+  confirm_password: 密碼確認
+
+  billing_information: 付款資料
+  cardholder_name: 信用卡名字
+  card_number: 信用卡號碼
+  security_code: 
+  expiry_date: 有效日期
+  billing_address: 地址
+  purchase: 購買

@@ -20,9 +20,42 @@ en:
   signout: Sign Out
   about: About
   contact: Contact
+
+  buy: buy now!  
+  savings_home: Savings
+
+  days: days
+  hours: hours
+  minutes: minutes
+  seconds: seconds
+  time_left: Left To Buy
+ 
   date: Date
   deal: Deal
   price: Price
   value: Value
   discount: Discount
   savings: Savings
+  
+  checkout: Checkout
+  quantity: Quantity
+  total: Total
+
+  already_have_account: Already have an account?
+  you_can_use: You can use 
+  or: or your Dealamama Account to
+  create_account: If you don't have an account, please create one here
+  name: Name
+  email: Email
+  password: Password
+  confirm_password: Confirm Password
+
+  billing_information: Billing Information
+  cardholder_name: Cardholder Name
+  card_number: Card Number
+  security_code: Security Code
+  billing_address: Billing Address
+  city: City
+  province: Province
+  postal_code: Postal Code
+  purchase: Purchase Deal

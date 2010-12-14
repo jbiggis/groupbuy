@@ -20,10 +20,10 @@
     <td><%= deal.start_time.strftime("%B %d, %Y") %></td>	 
     <td><%= image_tag deal.image.url, :size => '120x120' %></td>      
     <td><%= link_to deal.title, {:action => 'deal', :id => deal.id} %><br/><%=deal.description %></td>
-    <td><%= deal.price %></td>
-    <td><%= deal.value %></td>
-    <td><%= (1 - (deal.price/deal.value))*100 %> %</td>
-    <td><%= deal.value - deal.price%></td>
+    <td><%= number_to_currency(deal.price) %></td>
+    <td><%= number_to_currency(deal.value) %></td>
+    <td><%= ((1 - (deal.price/deal.value))*100).to_i %> %</td>
+    <td><%= number_to_currency(deal.value - deal.price)%></td>
 
   </tr>
 <% end %>

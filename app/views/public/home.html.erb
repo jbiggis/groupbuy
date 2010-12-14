@@ -26,7 +26,7 @@
 </div>
 
 <div id ="buy-button">
-<%= link_to "buy now!", {:controller => 'public', :action => 'checkout', :id => @deal.id}, :class => 'button rounded' %>
+<%= link_to t(:buy), {:controller => 'public', :action => 'checkout', :id => @deal.id}, :class => 'button rounded' %>
 </div>
 
 
@@ -35,19 +35,19 @@
 <div id="deal-value" class="round">
 
 	HK$<%=(@deal.price).to_i %>
-	  <div class="deal-value-label">Value</div>
+	<div class="deal-value-label"><%=t :value%></div>
 </div>
 
 <div id="deal-discount" class="round">
 
 	<%= (((@deal.value - @deal.price)/@deal.value)*100).to_i %>%
-	  <div class="deal-value-label">Discount</div>
+	<div class="deal-value-label"><%=t :discount%></div>
 </div>
 
 <div id="deal-savings"  class="round">
 
 	HK$<%= (@deal.value - @deal.price).to_i %>
-	  <div class="deal-value-label">Savings</div>
+	<div class="deal-value-label"><%=t :savings_home%></div>
 </div>
 
 </div>

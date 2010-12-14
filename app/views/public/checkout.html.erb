@@ -1,4 +1,4 @@
-<h1><%=title%></h1>
+<h1><%=t :checkout%></h1>
 
 <%form_for :order, @order, :url => { :action => "create" }  do |f|%>
 
@@ -34,26 +34,23 @@
 	<table>
 	
 	<tr>
-		<th>Description</th>
-		<th>Price</th>
-		<th>Quantity</th>
+		<th><%=t :deal%></th>
+		<th><%=t :price%></th>
+		<th><%=t :quantity%></th>
+		<th><%=t :total%></th> 
 
 	</tr>
 
 	<tr>
 		
 		<td><%= h(@deal.title) %></td>
-		<td><%= h(@deal.price) %></td>
+		<td><%= number_to_currency(h(@deal.price)) %></td>
 		<td><%=f.text_field :quantity %></td>
-
+		<td><%= number_to_currency((@deal.price)*1)%></td> 
 	</tr>
 
 
-	<tr>
-		
-		<td>Total Price: </td>
-	
-	</tr>
+
 	
 	</table>
 
@@ -64,34 +61,42 @@
 
 	<% if !anybody_signed_in? %>
 
-		<h2>Create an Account</h2>
+		<%=t :already_have_account %>
+		<br/>
+        <%=t :you_can_use %>
+	<% fb_signin = image_tag "fb_login.png", :alt => "Facebook" %>
+	<%= link_to fb_signin, '/auth/facebook', :class => 'fb-signin' %>
+	<%=t :or %>
+	<%= link_to t(:signin), new_user_session_path, :class => "nav-link" %>
+        	
+	<h2><%=t :create_account%></h2>
 
 		<%= fields_for(@user) do |fo| %>
 
 			<div class="field">
 		
-				<%= fo.label :name %> <br/>
+				<%=t :name %> <br/>
 				<%= fo.text_field :name %>
 		
 			</div>	
 	
 			<div class="field">
 		
-				<%= fo.label :email %> <br/>
+				<%=t :email %> <br/>
 				<%= fo.text_field :email %>
 		
 			</div>
 
 			<div class="field">
 	
-				<%= fo.label :password %> <br/>
+				<%=t :password %> <br/>
 				<%= fo.text_field :password %>
 			
 			</div>
 
 			<div class="field">
 				
-				<%= fo.label :password_confirmation %> <br/>
+				<%=t :confirm_password %> <br/>
 				<%= fo.text_field :password_confirmation %>
 			
 			</div>
@@ -101,69 +106,69 @@
 	<% end %>
 
 
-	<h2>Billing Information</h2>
+	<h2><%=t :billing_information%></h2>
 
 
 
 	<div class="field">
 	
-		<%= f.label :cardholder_name %><br/>
+		<%=t :cardholder_name %><br/>
 		<%= f.text_field :cardholder_name %>
 
 	</div>
 
 	<div class="field">
 		
-		<%= f.label :card_number %><br/>
+		<%=t :card_number %><br/>
 		<%= f.text_field :card_number %>
 
 	</div>
 
 	<div class="field">
 	
-		<%= f.label :security_code %><br/>
+		<%=t :security_code %><br/>
 		<%= f.text_field :security_code %>
 
 	</div>
 
 	<div class="field">
 		
-		<%= f.label :expiry_date %><br/>
+		<%=t :expiry_date %><br/>
 		<%= f.text_field :expiry_date %>
 
 	</div>
 
 	<div class="field">
 		
-		<%= f.label :billing_address %><br/>
+		<%=t :billing_address %><br/>
 		<%= f.text_field :billing_address %>
 
 	</div>
 
 	<div class="field">
 		
-		<%= f.label :city %><br/>
+		<%=t :city %><br/>
 		<%= f.text_field :city %>
 
 	</div>
 
 	<div class="field">
 	
-		<%= f.label :province %><br/>
+		<%=t :province %><br/>
 		<%= f.text_field :province %>
 
 	</div>
 	
 	<div class="field">
 	
-		<%= f.label :postal_code %><br/>
+		<%=t :postal_code %><br/>
 		<%= f.text_field :postal_code %>
 
 	</div>
 
 	<div class="action">
 
-		<%= f.submit "Purchase deal"%>
+		<%= f.submit "Purchase Deal"%>
 
 	</div>
 
