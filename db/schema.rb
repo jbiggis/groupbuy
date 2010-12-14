@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20101214022827) do
     t.decimal  "price"
     t.decimal  "value"
     t.string   "description_en"
-    t.text     "fine_print_en",      
+    t.text     "fine_print_en"      
     t.datetime "expiration_date"
     t.datetime "start_time"
     t.datetime "end_time"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20101214022827) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.text     "summary_en",        
+    t.text     "summary_en"        
     t.boolean  "showoff",                           :default => false
     t.string   "title_zh"
     t.string   "description_zh"
