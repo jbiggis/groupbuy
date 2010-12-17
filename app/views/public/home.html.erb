@@ -73,20 +73,18 @@
   <div id="deal-company-info">
 	  <div id="deal-company-info-label"><%=t :company_information%></div>
 <p>
-<%= @deal.company_name %>
-</p>
-
-<p>
-  <%= @deal.company_address %>
-</p>
-
-<p>
-  <%= @deal.company_website %>
-</p>
-
-<p>
-  <%= @deal.company_phone %>
-</p>
+<%= @deal.companies.each do |company| %>
+	
+	<%= company.name %>
+	<%= company.website %>
+	<%= company.locations.each do |location| %>
+		<%= location.address %>
+		<%= location.phone %>
+	
+	<% end %>
+<% end %>
+	
+	</p>
 
 </div>
 
@@ -102,6 +100,8 @@
 
 
 </div>
+
+
 
 
 

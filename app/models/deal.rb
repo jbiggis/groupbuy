@@ -26,10 +26,14 @@
 
 class Deal < ActiveRecord::Base
 
-	 translatable_columns :title, :description, :fine_print, :summary, :company_name, :company_address 
+	 translatable_columns :title, :description, :fine_print, :summary 
 
 has_many :orders
 has_many :coupons
+has_many :companies, :dependent => :destroy
+
+accepts_nested_attributes_for :companies, :allow_destroy => true, :reject_if => lambda { |a| a[:name].blank? }
+
 
 has_attached_file :image, :url => "/assets/deals/:id/:style/:basename.:extension",
 	:path => ":rails_root/public/assets/deals/:id/:style/:basename.:extension"

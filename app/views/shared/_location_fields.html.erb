@@ -1,0 +1,11 @@
+	 <p class="fields">
+	 <%= f.label :address, "Location" %><br/>
+		     <% Location.available_translatable_columns_of(:address).each do |attribute| %> 
+	  		<%= f.text_field attribute %> 
+ 
+		<% end %><br/>
+		<%= f.label :phone %><br/>
+			<%= f.text_field :phone %>
+			<%= link_to_remove_fields "remove", f %>
+			
+			</p>

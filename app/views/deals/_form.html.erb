@@ -76,28 +76,16 @@
   </div>
 
   <div class = "company-info">
+  <div class="company-overview">
+		  
+	  Company Information:<br/>
 	  
-  <div class="field">
-    <%= f.label :company_name %><br />
-      <% Deal.available_translatable_columns_of(:company_name).each do |attribute| %> 
-	  <%= f.text_field attribute %> 
- 
-  <% end %>
-  </div>
-  <div class="field">
-    <%= f.label :company_address %><br />
-      <% Deal.available_translatable_columns_of(:company_address).each do |attribute| %> 
-	  <%= f.text_field attribute %> 
- 
-  <% end %>
-  </div>
-    <div class="field">
-    <%= f.label :company_website %><br />
-    <%= f.text_field :company_website %>
-  </div>
-    <div class="field">
-    <%= f.label :company_phone %><br />
-    <%= f.text_field :company_phone %>
+	  <%= f.fields_for :companies do |builder| %>
+		  
+		<%= render "shared/company_fields", :f => builder%>
+	
+  	  <% end %>
+<p><%= link_to_add_fields "Add Company", f, :companies %></p>
   </div>
 
   </div>

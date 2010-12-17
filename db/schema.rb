@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101214022827) do
+ActiveRecord::Schema.define(:version => 20101216234058) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                             :default => "",   :null => false
@@ -41,6 +41,24 @@ ActiveRecord::Schema.define(:version => 20101214022827) do
     t.datetime "updated_at"
   end
 
+  create_table "companies", :force => true do |t|
+    t.integer  "deal_id"
+    t.string   "name_en"
+    t.string   "name_zh"
+    t.string   "website"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "company_contact_infos", :force => true do |t|
+    t.integer  "company_id"
+    t.string   "address_en"
+    t.string   "address_zh"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "coupons", :force => true do |t|
     t.string   "coupon_code"
     t.integer  "user_id"
@@ -54,35 +72,38 @@ ActiveRecord::Schema.define(:version => 20101214022827) do
 
   create_table "deals", :force => true do |t|
     t.string   "title_en"
+    t.string   "title_zh"
+    t.string   "description_en"
+    t.string   "description_zh"
     t.decimal  "price"
     t.decimal  "value"
-    t.string   "description_en"
-    t.text     "fine_print_en"      
+    t.text     "summary_en"
+    t.text     "summary_zh"
+    t.text     "fine_print_en"
+    t.text     "fine_print_zh"
     t.datetime "expiration_date"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "company_name_en"
-    t.string   "company_address_en"
-    t.string   "company_website"
-    t.string   "company_phone"
+    t.boolean  "showoff",            :default => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.text     "summary_en"        
-    t.boolean  "showoff",                           :default => false
-    t.string   "title_zh"
-    t.string   "description_zh"
-    t.text     "fine_print_zh"
-    t.text     "summary_zh"
-    t.string   "company_name_zh"
-    t.string   "company_address_zh"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "emails", :force => true do |t|
     t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.integer  "company_id"
+    t.string   "address_en"
+    t.string   "address_zh"
+    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

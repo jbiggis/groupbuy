@@ -1,0 +1,30 @@
+<div class="fields">
+	<p>
+	
+	<%= f.label :name, "Company Name" %>
+	
+	<%= link_to_remove_fields "remove", f %><br/>
+	
+	<% Company.available_translatable_columns_of(:name).each do |attribute| %> 
+		
+	       	<%= f.text_field attribute %> 
+ 
+  	<% end %><br/>
+	
+	<%= f.label :website %><br/>
+	
+	<%= f.text_field :website %>
+
+	</p>
+
+
+
+	<% f.fields_for :locations do |builder| %>
+
+		<%= render "shared/location_fields", :f => builder%>
+
+	<% end %>
+
+	<p><%= link_to_add_fields "Add Location", f, :locations %></p>
+
+</div>

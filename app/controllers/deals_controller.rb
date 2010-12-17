@@ -23,6 +23,8 @@ class DealsController < ApplicationController
 	  @deal = Deal.new
 	@title = "Create a new deal"
 
+	companies = @deal.companies.build
+		companies.locations.build
   end
 
 
@@ -30,7 +32,8 @@ class DealsController < ApplicationController
   
 	  @deal = Deal.find(params[:id])
   	@title = "Edit " + @deal.title
-
+	companies = @deal.companies.build
+	companies.locations.build
   end
 
 

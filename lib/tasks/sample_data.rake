@@ -61,21 +61,23 @@ Deal.create!(:title_en => "The Juicy Burger Deal",
 	     :expiration_date => "01/01/2011",
 	     :start_time => "12/#{n+1}/2010",
 	     :end_time => "12/#{n+2}/2010",
-	     :company_name_en => "company-#{n+1}",
-	     :company_name_zh => "冰乳酪高鈣低脂",
-		:company_address_en => "#{n+1} st.",
-		:company_address_zh => "冰乳酪高鈣低脂",
-		:company_website => "www.awesome.com",
-		:company_phone => "60320328",
-	       :image_file_name => "1.jpg",
+	        :image_file_name => "1.jpg",
        		:image_content_type => "image/jpeg",
  		:image_file_size => 52198,
 		:image_updated_at => 12/12/2010, 
 	    	:showoff => true)		
 end
 
-		
+end
 
+def make_companies
+
+#company_name_en => "company-#{n+1}",
+#	     :company_name_zh => "冰乳酪高鈣低脂",
+#		:company_address_en => "#{n+1} st.",
+#		:company_address_zh => "冰乳酪高鈣低脂",
+#		:company_website => "www.awesome.com",
+#		:company_phone => "60320328",
 
 end
 
