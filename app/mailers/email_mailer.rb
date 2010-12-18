@@ -1,10 +1,14 @@
+
 class EmailMailer < ActionMailer::Base
-  default :from => "admin@dealamama.com"
-  def daily_email
+	    default :from =>"ryan@railscast.com"
+def daily_email(email)
 
-	  emails = Email.all
-	emails.each do |email2|
+@deal = Deal.find_active
 
-	  mail(:to => email2.email., :subject => "Dealamama Daily Deal")
-  end
+
+
+	mail(:to=> email, :subject => "Registered")
+end
+
+
 end

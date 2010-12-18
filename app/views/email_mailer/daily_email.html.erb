@@ -1,75 +1,114 @@
 <html>
-<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" bgcolor='#66CC00' >
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" bgcolor='#99CC00' >
 
 <STYLE>
- .headerTop { background-color:#66CC00; border-top:0px solid #000000; border-bottom:0px solid #FFCC66; text-align:right; }
- .adminText { font-size:10px; color:#FFFFCC; line-height:200%; font-family:verdana; text-decoration:none; }
- .headerBar { background-color:#FFFFFF; border-top:0px solid #FFFFFF; border-bottom:0px solid #333333; }
- .title { font-size:22px; font-weight:bold; color:#336600; font-family:arial; line-height:110%; }
+ .headerTop { background-color:#FFCC66; border-top:0px solid #000000; border-bottom:1px solid #FFFFFF; text-align:center; }
+ .adminText { font-size:10px; color:#996600; line-height:200%; font-family:verdana; text-decoration:none; }
+ .headerBar { background-color:#FFFFFF; border-top:0px solid #333333; border-bottom:10px solid #FFFFFF; }
+ .title { font-size:20px; font-weight:bold; color:#CC6600; font-family:arial; line-height:110%; }
  .subTitle { font-size:11px; font-weight:normal; color:#666666; font-style:italic; font-family:arial; }
  td { font-size:12px; color:#000000; line-height:150%; font-family:trebuchet ms; }
+ .sideColumn { background-color:#FFFFFF; border-left:1px dashed #CCCCCC; text-align:left; }
+ .sideColumnText { font-size:11px; font-weight:normal; color:#999999; font-family:arial; line-height:150%; }
+ .sideColumnTitle { font-size:15px; font-weight:bold; color:#333333; font-family:arial; line-height:150%; }
  .footerRow { background-color:#FFFFCC; border-top:10px solid #FFFFFF; }
- .footerText { font-size:10px; color:#333333; line-height:100%; font-family:verdana; }
- a { color:#FF0000; color:#FF6600; color:#FF6600; }
+ .footerText { font-size:10px; color:#996600; line-height:100%; font-family:verdana; }
+ a { color:#FF6600; color:#FF6600; color:#FF6600; }
 </STYLE>
 
 
 
-<table width="100%" cellpadding="10" cellspacing="0" class="backgroundTable" bgcolor='#66CC00' >
+<table width="100%" cellpadding="10" cellspacing="0" bgcolor='#99CC00' >
 <tr>
 <td valign="top" align="center">
 
-<table width="550" cellpadding="0" cellspacing="0">
+<table width="600" cellpadding="0" cellspacing="0">
 <tr>
-<td style="background-color:#66CC00;border-top:0px solid #000000;border-bottom:0px solid #FFCC66;text-align:right;" align="center"><span style="font-size:10px;color:#FFFFCC;line-height:200%;font-family:verdana;text-decoration:none;">Email not displaying correctly? <a href="*|ARCHIVE|*" style="font-size:10px;color:#FFFFCC;line-height:200%;font-family:verdana;text-decoration:none;">View it in your browser.</a></span></td>
+<td style="background-color:#FFCC66;border-top:0px solid #000000;border-bottom:1px solid #FFFFFF;text-align:center;" align="center"><span style="font-size:10px;color:#996600;line-height:200%;font-family:verdana;text-decoration:none;">Email not displaying correctly? <a href="*|ARCHIVE|*" style="font-size:10px;color:#996600;line-height:200%;font-family:verdana;text-decoration:none;">View it in your browser.</a></span></td>
 
-</tr>
- 
-<tr>
-	<td style="background-color:#FFFFFF;border-top:0px solid #FFFFFF;border-bottom:0px solid #333333;"><center><a href=""><%=image_tag "http://www.groupon.com/images/site_images/0302/1892/AquaSub-Scuba-Diving-Centre.jpg" %><IMG id=editableImg1 SRC="www.groupon.com/images/site_images/0302/1892/AquaSub-Scuba-Diving-Centre.jpg" BORDER="0" title="Your Company"  alt="Your Company" align="center"></a></center></td>
 </tr>
 
 <tr>
-<td style="background-color:#FFFFFF;border-top:0px solid #FFFFFF;border-bottom:0px solid #333333;"><center><a href="#"><img src="/public/images/panini.jpg" width="550" height="300" border="0" alt="Lorem ipsum"></a></center></td>
+<td align="left" valign="middle" style="background-color:#FFFFFF;border-top:0px solid #333333;border-bottom:10px solid #FFFFFF;"><center><a href=""><IMG id=editableImg1 SRC="img/logo_2column.jpg" BORDER="0" title="Your Company"  alt="Your Company" align="center"></a></center></td>
 </tr>
+
+
 </table>
 
-<table width="550" cellpadding="20" cellspacing="0" bgcolor="#FFFFFF">
+<table width="600" cellpadding="20" cellspacing="0" bgcolor="#FFFFFF">
 <tr>
-<td bgcolor="#FFFFFF" valign="top" style="font-size:12px;color:#000000;line-height:150%;font-family:trebuchet ms;">
+
+<td bgcolor="#FFFFFF" valign="top" width="400" style="font-size:12px;color:#000000;line-height:150%;font-family:trebuchet ms;">
 
 <p>
-<span style="font-size:22px;font-weight:bold;color:#336600;font-family:arial;line-height:110%;">The Big Banana Bonanza</span><br>
+<span style="font-size:20px;font-weight:bold;color:#CC6600;font-family:arial;line-height:110%;"><%= @deal.description %></span><br>
 
-Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Sed at erat. Phasellus condimentum. Nullam sed magna. Donec quis tellus in neque congue porttitor. Proin sit amet ligula id leo porta rutrum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In suscipit, pede a rutrum malesuada, lacus massa euismod neque, a hendrerit justo ante at eros. <a href="#">Clickitus heritus.</a>
+<span style="font-size:11px;font-weight:normal;color:#666666;font-style:italic;font-family:arial;">subheading</span><br>
+<%= @deal.summary %>
 </p>
 
 
 
+<p>
+<span style="font-size:20px;font-weight:bold;color:#CC6600;font-family:arial;line-height:110%;"></span><br>
+<span style="font-size:11px;font-weight:normal;color:#666666;font-style:italic;font-family:arial;">Company Information:</span><br>
+<%= @deal.companies.each do |company| %>
+	
+	<%= company.name %>
+	<%= company.website %>
+	<%= company.locations.each do |location| %>
+		<%= location.address %>
+		<%= location.phone %>
+	
+	<% end %>
+<% end %>
+
+</p>
+
+
 
 </td>
+
+
+<td width="200" valign="top" style="background-color:#FFFFFF;border-left:1px dashed #CCCCCC;text-align:left;">
+<span style="font-size:11px;font-weight:normal;color:#999999;font-family:arial;line-height:150%;">
+
+<span style="font-size:15px;font-weight:bold;color:#333333;font-family:arial;line-height:150%;">Grooming Tips:</span><br>
+Tick picking novice? Lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Sed at erat. Phasellus condimentum. Nullam sed magna. Donec quis tellus in neque congue porttitor. Proin sit amet ligula id leo porta rutrum.
+
+<br>
+<br>
+
+<span style="font-size:15px;font-weight:bold;color:#333333;font-family:arial;line-height:150%;">Waterhole Dangers</span><br>
+
+Watery oasis, or crocodilian cesspool from hell? As the dry season approaches, lorem ipsum dolor sit amet, <a href="#">consectetuer adipiscing elit</a>. Sed at erat. Phasellus condimentum. Nullam sed magna. Donec quis tellus in neque congue porttitor. Proin sit amet ligula id leo porta rutrum.
+
+</span>
+</td>
+
+
 </tr>
 
 
 <tr>
-<td style="background-color:#FFFFCC;border-top:10px solid #FFFFFF;" valign="top">
-<span style="font-size:10px;color:#333333;line-height:100%;font-family:verdana;">
-
+<td style="background-color:#FFFFCC;border-top:10px solid #FFFFFF;" valign="top" colspan="2">
+<span style="font-size:10px;color:#996600;line-height:100%;font-family:verdana;">
 *|LIST:DESCRIPTION|* <br />
 <br />
 <a href="*|UNSUB|*">Unsubscribe</a> *|EMAIL|* from this list.<br />
+
 <br />
 Our mailing address is:<br />
 *|LIST:ADDRESS|*<br />
 <br />
 Our telephone:<br />
 *|LIST:PHONE|*<br />
-
 <br />
 Copyright (C) 2007 *|LIST:COMPANY|* All rights reserved.<br />
 <br />
 <a href="*|FORWARD|*">Forward</a> this email to a friend
   
+
 </span>
 </td>
 </tr>
@@ -78,10 +117,16 @@ Copyright (C) 2007 *|LIST:COMPANY|* All rights reserved.<br />
 </table>
 
 
+
+
+
+
+
 </td>
 </tr>
-
 </table>
+
+
 
 
 </body>

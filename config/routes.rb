@@ -1,9 +1,11 @@
 Groupbuy::Application.routes.draw do
 
-
+  scope "(:locale)", :locale => /en|zh/ do
   devise_for :admins,  :controllers => { :registrations => "admins/registrations" }
 
   devise_for :users,  :controllers => { :registrations => "users/registrations" }
+
+
 
   resources :coupons
 
@@ -11,7 +13,9 @@ Groupbuy::Application.routes.draw do
 
   resources :profiles
 
+
   resources :deals
+  end
 
   resources :emails, :only => [:create]
  
@@ -27,6 +31,7 @@ Groupbuy::Application.routes.draw do
   end
 
 
+
   match '/deal', :to => 'public#deal'
   match '/checkout', :to =>'public#checkout'
   post 'public/create'
@@ -40,6 +45,7 @@ Groupbuy::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/how-it-works', :to => 'pages#how_it_works'
 
+match '/:locale' => 'public#home'
   root :to => "public#home"
 
   # The priority is based upon order of creation:
